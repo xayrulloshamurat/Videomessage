@@ -2,6 +2,7 @@ package com.example.videomessages.data.retrofit
 
 import com.example.videomessages.data.models.Customer
 import com.example.videomessages.data.models.GenericResponse
+import com.example.videomessages.data.models.Report
 import com.example.videomessages.data.models.editTime
 import io.reactivex.rxjava3.core.Observable
 import retrofit2.http.Body
@@ -17,9 +18,9 @@ interface ApiInterface {
 //
     @GET("bot/getAllSupervisor")
     fun getAllSupervisor(): Observable<GenericResponse<List<Customer>>>
-//
-//    @GET("bot/getAllReport")
-//    fun  fun getAllReport: Observable<GenericResponse<LastAnimals>>
+
+    @GET("bot/getAllReport")
+    fun getAllReport() : Observable<GenericResponse<List<Report>>>
 //
 //    @GET("bot/byDate")
 //    fun  fun byDate(): Observable<GenericResponse<LastAnimals>>

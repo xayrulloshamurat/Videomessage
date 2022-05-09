@@ -4,6 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.videomessages.data.Resource
 import com.example.videomessages.data.models.Customer
+import com.example.videomessages.data.models.GenericResponse
 import com.example.videomessages.data.retrofit.ApiInterface
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.disposables.CompositeDisposable

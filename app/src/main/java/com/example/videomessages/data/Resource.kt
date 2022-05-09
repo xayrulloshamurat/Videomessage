@@ -1,4 +1,8 @@
 package com.example.videomessages.data
+
+import com.example.videomessages.data.models.Customer
+import com.example.videomessages.data.models.GenericResponse
+
 open class Resource<out T>(
     val status: ResourceState,
     val data: T?,

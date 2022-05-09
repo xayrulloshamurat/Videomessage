@@ -17,7 +17,7 @@ class MainAdapter : RecyclerView.Adapter<MainAdapter.ViewHolder>() {
         }
     inner class ViewHolder(var binding: CustomerItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun populateModel(customer: Customer) {
-            binding.tvTitle.text = customer.name
+            binding.tvTitle.text = customer.username
             binding.tvPrice.text = customer.lastName
         }
     }

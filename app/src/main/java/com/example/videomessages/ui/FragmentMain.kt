@@ -15,55 +15,53 @@ import com.example.videomessages.databinding.FragmentMainBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
-class FragmentMain : Fragment(R.layout.fragment_main), AdapterView.OnItemClickListener {
+class FragmentMain : Fragment(R.layout.fragment_main) {
     private lateinit var binding: FragmentMainBinding
     private val adapterMain = MainAdapter()
     private val customerViewModel: CustomerViewModel by viewModel()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding = FragmentMainBinding.bind(view)
         customerViewModel.customersFunc()
+        binding = FragmentMainBinding.bind(view)
         binding.recyclerView.adapter = adapterMain
         var spinner = binding.spinner
-
-
-
         customerViewModel.customers.observe(viewLifecycleOwner) {
             when (it.status) {
                 ResourceState.LOADING -> {
 
                 }
                 ResourceState.SUCCESS -> {
-                    if (spinner != null) {
-                        val adapter = ArrayAdapter(
-                            requireContext(),
-                            android.R.layout.simple_spinner_item,
-                            it.
-                        )
+                    adapterMain.models = it.data!!
 
-                        spinner.adapter = adapter
-
-                        spinner.onItemSelectedListener = object :
-                            AdapterView.OnItemSelectedListener {
-                            override fun onItemSelected(
-                                parent: AdapterView<*>,
-                                view: View, position: Int, id: Long
-                            ) {
-                                Toast.makeText(
-                                    requireContext(),
-                                    getString(R.string.selected_item) + " " +
-                                            "" +  it.data!![position], Toast.LENGTH_SHORT
-                                ).show()
-                            }
-
-                            override fun onNothingSelected(p0: AdapterView<*>?) {
-                                TODO("Not yet implemented")
-                            }
-
-                        }
+//                    if (spinner != null) {
+//                        val adapter = ArrayAdapter(
+//                            requireContext(),
+//                            android.R.layout.simple_spinner_item,
+//                            it.data
+//                        )
+//
+//                        spinner.adapter = adapter
+//
+//                        spinner.onItemSelectedListener = object :
+//                            AdapterView.OnItemSelectedListener {
+//                            override fun onItemSelected(
+//                                parent: AdapterView<*>,
+//                                view: View, position: Int, id: Long
+//                            ) {
+//                                Toast.makeText(
+//                                    requireContext(),
+//                                    getString(R.string.selected_item) + " " +
+//                                            "" +  it.data.data[position], Toast.LENGTH_SHORT
+//                                ).show()
+//                            }
+//
+//                            override fun onNothingSelected(p0: AdapterView<*>?) {
+//                                TODO("Not yet implemented")
+//                            }
+//
+//                        }
 
                     }
-                }
                 ResourceState.ERROR -> {
 
                 }
@@ -72,7 +70,7 @@ class FragmentMain : Fragment(R.layout.fragment_main), AdapterView.OnItemClickLi
     }
 
 
-    override fun onItemClick(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-        TODO("Not yet implemented")
-    }
+//    override fun onItemClick(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+//        TODO("Not yet implemented")
+//    }
 }
