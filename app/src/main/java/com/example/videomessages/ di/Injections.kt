@@ -1,6 +1,7 @@
 package com.example.videomessages.di
 
 import com.example.videomessages.CustomerViewModel
+import com.example.videomessages.LoginViewModel
 import com.example.videomessages.data.models.Customer
 import com.example.videomessages.data.retrofit.ApiInterface
 import com.google.gson.GsonBuilder
@@ -11,7 +12,7 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
-const val baseUrl = "https://bottest888.herokuapp.com"
+const val baseUrl = "http://smartshop24.uz"
 
 val dataModule = module {
     single {
@@ -32,4 +33,5 @@ val dataModule = module {
 }
 val viewModelModule = module {
     viewModel { CustomerViewModel(get()) }
+    viewModel { LoginViewModel(get()) }
 }

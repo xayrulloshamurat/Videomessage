@@ -18,17 +18,16 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:src="@drawable/login"
-        app:layout_constraintBottom_toTopOf="@id/etPhone"
+        app:layout_constraintBottom_toTopOf="@id/username"
         app:layout_constraintTop_toBottomOf="@id/progressBar" />
 
     <EditText
-        android:id="@+id/etPhone"
+        android:id="@+id/username"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="24dp"
-        android:background="@drawable/shape"
-        android:hint="Phone"
-        android:inputType="number"
+        android:hint="Username"
+        android:inputType="text"
         android:padding="16dp"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -41,27 +40,26 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:background="@drawable/shape"
         android:hint="Password"
-        android:inputType="textPassword"
+        android:inputType="number"
         android:padding="16dp"
         android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="@id/etPhone"
-        app:layout_constraintStart_toStartOf="@id/etPhone"
-        app:layout_constraintTop_toBottomOf="@+id/etPhone" />
+        app:layout_constraintEnd_toEndOf="@id/username"
+        app:layout_constraintStart_toStartOf="@id/username"
+        app:layout_constraintTop_toBottomOf="@+id/username" />
 
     <TextView
         android:id="@+id/btnSignIn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:background="@drawable/shape"
-        android:gravity="center"
         android:padding="16dp"
         android:text="Login"
         android:textColor="@color/black"
         android:textSize="26dp"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"
         app:layout_constraintTop_toBottomOf="@id/etPassword" />
 
     <TextView
