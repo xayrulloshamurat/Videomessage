@@ -1,7 +1,6 @@
-package com.example.videomessages.data.models
+package com.example.videomessages.data.model
 
-class editTime(
-
+data class EditTime(
     var startHour: String,
     var endHour: String,
     var startMinute: String,

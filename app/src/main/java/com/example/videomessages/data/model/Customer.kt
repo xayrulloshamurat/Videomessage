@@ -1,6 +1,6 @@
-package com.example.videomessages.data.models
+package com.example.videomessages.data.model
 
-class Customer(
+data class Customer(
     val id : Int,
     var firstName : String,
     var lastName: String,

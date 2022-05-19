@@ -1,6 +1,6 @@
-package com.example.videomessages.data.models
+package com.example.videomessages.data.model
 
-class Report(
+data class Report(
     val id: Int,
     var url: String,
     var date: String,

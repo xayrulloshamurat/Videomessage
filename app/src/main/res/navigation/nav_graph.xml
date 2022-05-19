@@ -6,14 +6,17 @@
 
     <fragment
         android:id="@+id/fragmentMain"
-        android:name="com.example.videomessages.ui.FragmentMain"
+        android:name="com.example.videomessages.presenter.main.MainFragment"
         android:label="FragmentMain" />
+
     <fragment
         android:id="@+id/fragmentLogin"
-        android:name="com.example.videomessages.FragmentLogin"
-        android:label="FragmentLogin" >
+        android:name="com.example.videomessages.presenter.login.LoginFragment"
+        android:label="FragmentLogin">
+
         <action
             android:id="@+id/action_fragmentLogin_to_fragmentMain"
             app:destination="@id/fragmentMain" />
     </fragment>
+
 </navigation>

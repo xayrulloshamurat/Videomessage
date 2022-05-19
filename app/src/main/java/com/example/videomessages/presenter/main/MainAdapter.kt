@@ -1,30 +1,33 @@
-package com.example.videomessages
+package com.example.videomessages.presenter.main
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.videomessages.data.models.Customer
+import com.example.videomessages.R
+import com.example.videomessages.data.model.Customer
 import com.example.videomessages.databinding.CustomerItemBinding
-import com.example.videomessages.databinding.FragmentMainBinding
 
 class MainAdapter : RecyclerView.Adapter<MainAdapter.ViewHolder>() {
+
     var models: List<Customer> = listOf()
         @SuppressLint("NotifyDataSetChanged")
         set(value) {
             field = value
             notifyDataSetChanged()
         }
-    inner class ViewHolder(var binding: CustomerItemBinding) : RecyclerView.ViewHolder(binding.root) {
+
+    inner class ViewHolder(var binding: CustomerItemBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun populateModel(customer: Customer) {
-            binding.tvTitle.text = customer.username
-            binding.tvPrice.text = customer.lastName
+            binding.firstName.text = customer.username
+            binding.lastName.text = customer.lastName
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.fragment_main, parent, false)
-        var binding = CustomerItemBinding.bind(view)
+        val binding = CustomerItemBinding.bind(view)
         return ViewHolder(binding)
     }
 
